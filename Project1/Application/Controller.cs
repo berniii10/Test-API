@@ -1,4 +1,6 @@
 ﻿using Project1.Application.Http;
+using Project1.Application.Json;
+using Project1.Application.TmbDataClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,7 @@ namespace Project1.Application
             string responseToHttpRequest = await HttpRequest.request("linies/");
             if (responseToHttpRequest != null)
             {
+                TmbData tmbData = JsonDeserializer.Deserialize(responseToHttpRequest);
                 Console.WriteLine(responseToHttpRequest);
             }
             else
