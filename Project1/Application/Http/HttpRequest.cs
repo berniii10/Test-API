@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Project1.Application.Http
 {
-    public class HttpRequest
+    static public class HttpRequest
     {
-        private const string URL_Base = "https://api.tmb.cat/v1/transit/";
-        private string URL_Parameters = "?app_id=7cdac919&app_key=abfd7135dd550a2945935fc28a1caf8e";
-
-        public async Task<string> request(string URL_Data)
+        static public async Task<string> request(string entity)
         {
             HttpClient client = new HttpClient();
-
+            string URL_Base = "https://api.tmb.cat/v1/transit/";
+            string URL_Parameters = "?app_id=7cdac919&app_key=abfd7135dd550a2945935fc28a1caf8e";
             try
             {
-                HttpResponseMessage response = await client.GetAsync(URL_Base + URL_Data + URL_Parameters);
+                HttpResponseMessage response = await client.GetAsync(URL_Base + entity + URL_Parameters);
                 if (response.IsSuccessStatusCode)
                 {
                     // Read and display the response content
