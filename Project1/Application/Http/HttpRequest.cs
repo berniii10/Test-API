@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace Project1
+namespace Project1.Application.Http
 {
     public class HttpRequest
     {

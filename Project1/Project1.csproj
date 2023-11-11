@@ -46,14 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="HttpRequest.cs" />
+    <Compile Include="Application\Controller.cs" />
+    <Compile Include="Application\Json\JsonDeserializer.cs" />
+    <Compile Include="Application\Json\JsonSerializer.cs" />
+    <Compile Include="Application\TmbDataClasses\Crs.cs" />
+    <Compile Include="Application\TmbDataClasses\Feature.cs" />
+    <Compile Include="Application\TmbDataClasses\Geometry.cs" />
+    <Compile Include="Application\TmbDataClasses\Properties.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Application\Http\HttpRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TmbData.cs" />
+    <Compile Include="Application\TmbDataClasses\TmbData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
